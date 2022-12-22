@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <listeners>
+    <listener class-name="package_imooc.TestNGListennerSendEmail"></listener>
+  </listeners>
+
+  <test thread-count="5" name="Test1">
+    <parameter name="course_url" value="https://www.imooc.com/class/303.html/"/>
+    <parameter name="login_url" value="https://www.imooc.com/user/newlogin/form_url/1005/"/>
+    <parameter name="coursename" value="剑指Java面试-Offer直通车">
+      <parameter name="browser" value="gecko"/>
+      <parameter name="username" value="16620816949"/>
+      <parameter name="password" value="MXYmxy1994"/>
+    </parameter>
+    </test>
+    <test thread-count="5" name="Test">
+        <classes>
+            <class name="imooc.runcase.LoginCase">
+                <methods>
+                    <parameter name="login_url" value="https://www.imooc.com/user/newlogin/form_url/1005/"/>
+                    <parameter name="username" value="16620816949"/>
+                    <parameter name="password" value="MXYmxy1994"/>
+                    <include name="TestLoginSucess"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+  <test thread-count="5" name="sureorder">
+    <parameter name="submit_url" value="https://order.imooc.com/pay/confirm?goods_ids=2878&amp;from=carts"/>
+    <parameter name="browser" value="gecko"/>
+    <classes>
+      <class name="imooc.runcase.SureSubmitCase">
+      <methods>
+        <include name="LoginSureSubmit"></include>
+        <include name="SureSubmit"></include>
+      </methods>
+      </class>
+    </classes>
+  </test> <!-- web_auto -->
+</suite> <!-- Default Suite -->
+

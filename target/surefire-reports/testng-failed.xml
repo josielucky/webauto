@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT" verbose="0">
+  <listeners>
+    <listener class-name="package_imooc.TestNGListennerSendEmail"/>
+  </listeners>
+  <test name="sureorder(failed)">
+    <parameter name="submit_url" value="https://order.imooc.com/pay/confirm?goods_ids=2878&amp;from=carts"/>
+    <parameter name="browser" value="gecko"/>
+    <classes>
+      <class name="imooc.runcase.SureSubmitCase">
+        <methods>
+          <include name="SureSubmit" invocation-numbers="0"/>
+          <include name="LoginSureSubmit" invocation-numbers="0"/>
+          <include name="afterclass"/>
+          <include name="beforeClass"/>
+        </methods>
+      </class> <!-- imooc.runcase.SureSubmitCase -->
+      <class name="imooc.runcase.LoginCase">
+        <methods>
+          <include name="afterclass"/>
+          <include name="beforeClass"/>
+        </methods>
+      </class> <!-- imooc.runcase.LoginCase -->
+    </classes>
+  </test> <!-- sureorder(failed) -->
+</suite> <!-- Failed suite [Suite] -->

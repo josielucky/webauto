@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+<listeners> <listener class-name="com.imooc.util.TestCaseReport"/> </listeners>
+<!--
+<test thread-count="5" name="Test">
+  <parameter name="url" value="https://www.imooc.com/user/newlogin/form_url/1005/"></parameter>
+  <parameter name="browser" value="gecko"></parameter>
+  <classes>
+    <class name="imooc.runcase.CourseCase">
+      <methods>
+        <include name="TestLoginSucess"></include>
+        <parameter name="username" value="16620816949"></parameter>
+        <parameter name="password" value="MXYmxy1994"></parameter>
+        <include name="TestCase2"></include>
+      </methods>
+    </class>
+  </classes>
+</test>
+-->
+<test thread-count="5" name="Test1">
+    <classes>
+        <class name="imooc.runcase.CourseCase">
+
+            <parameter name="browser" value="gecko"></parameter>
+            <methods>
+                <include name="AddCourseSucess"></include>
+                <parameter name="url" value="https://www.imooc.com/class/303.html/"></parameter>
+                <parameter name="coursename" value="剑指Java面试-Offer直通车"></parameter>
+            </methods>
+        </class>
+    </classes>
+</test> <!-- web_auto -->
+</suite> <!-- Default Suite -->
+
