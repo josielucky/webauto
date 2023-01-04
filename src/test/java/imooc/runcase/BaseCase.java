@@ -8,6 +8,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class BaseCase {
     public WebDriver GetDriver(String browser){
+        //选择浏览器
         WebDriver driver;
         if (browser.equalsIgnoreCase("gecko")){
             System.setProperty("webdriver.gecko.driver",

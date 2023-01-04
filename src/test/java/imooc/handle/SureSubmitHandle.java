@@ -8,6 +8,7 @@ public class SureSubmitHandle {
     public WebDriver driver;
     public SureSubmitPage suresubmitpage;
 
+
     public SureSubmitHandle(WebDriver driver){
         this.driver = driver;
         suresubmitpage = new SureSubmitPage(driver);
@@ -25,10 +26,14 @@ public class SureSubmitHandle {
     }
 
     public void SetUserCookie(){
+
+
         String value = "I4YmJhNmE1ODEyOGFmODE1MzAwZGQxMjQwNzA2YzQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANjgyMjQxNgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADkwN2YzMzY5MWU4NzhjNDg1MGUxZDliMjhmZWZmNmFjYceWY1YYcmM%3DY2";
         driver.manage().deleteAllCookies();
-        Cookie cookie = new Cookie("apsid",value,".imooc.com","/",null);
+        Cookie cookie = new Cookie("apsid",value,".imooc.com","/",null, true);
         System.out.println(cookie);
         driver.manage().addCookie(cookie);
+        String ckname = driver.manage().getCookieNamed("apsid").getValue();
+        System.out.println(ckname);
     }
 }
